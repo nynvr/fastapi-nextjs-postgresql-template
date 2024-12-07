@@ -1,0 +1,41 @@
+services:
+
+  db:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_DB=nynvrio_db
+      - POSTGRES_USER=nynvrio_user
+      - POSTGRES_PASSWORD=nynvrio_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: ./deploy/api/api.development.Dockerfile     # Change as needed
+    ports:
+      - "8000:8000"
+    environment:
+      - k1=v1                                                 # Change as needed
+    depends_on:
+      - db
+    volumes:
+      - ./apps/api/app:/code/app
+
+  web:
+    build:
+      context: .
+      dockerfile: ./deploy/web/web.development.Dockerfile     # Change as needed
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development                                  # Change as needed
+    depends_on:
+      - api
+    volumes:
+      - ./apps/web/app:/code/app
+      - ./apps/web/app/node_modules:/code/app/node_modules
+      - ./apps/web/app/.next:/code/app/.next
+
+volumes:
+  postgres_data:
