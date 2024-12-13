@@ -1,4 +1,10 @@
-# fastapi-nextjs-db-template
+A FastAPI, Next.js and PostgreSQL template
+```
+- Python: 3.12
+- FastAPI: 0.115.6
+- Node: 20.18
+- Next.js: 15.0.4
+```
 
 # Getting started
 
