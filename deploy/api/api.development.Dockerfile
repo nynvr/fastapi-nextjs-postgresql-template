@@ -5,10 +5,10 @@ FROM python:3.12
 WORKDIR /code
 
 # Copy package.json and package-lock.json
-COPY ./apps/api/requirements.txt /code/requirements.txt
+COPY ./apps/api/app/requirements.txt /code/app/requirements.txt
 
 # Install dependencies
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/app/requirements.txt
 
 # Copy the current directory contents into the container at /app
 COPY ./apps/api/app /code/app

@@ -2,17 +2,17 @@
 FROM node:20.18-slim
 
 # Set the working directory in the container
-WORKDIR /code
+WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY ./apps/web/app/package*.json ./app/
+COPY ./apps/web/app/package*.json ./
 
 # Install dependencies
-RUN npm --prefix ./app install
+RUN npm install
 
 # Copy the current directory contents into the container at /app
-COPY ./apps/web/app /code/app
-COPY ./deploy/web/web.development.run.sh /code/web.run.sh
+COPY ./apps/web/app .
+COPY ./deploy/web/web.development.run.sh /scripts/web.run.sh
 
-RUN chmod +x /code/web.run.sh
-CMD ["/code/web.run.sh"]
+RUN chmod +x /scripts/web.run.sh
+CMD ["/scripts/web.run.sh"]

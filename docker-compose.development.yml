@@ -33,9 +33,9 @@ services:
     depends_on:
       - api
     volumes:
-      - ./apps/web/app:/code/app
-      - ./apps/web/app/node_modules:/code/app/node_modules
-      - ./apps/web/app/.next:/code/app/.next
+      - ./apps/web/app:/app
+      - /app/node_modules
+      - /app/.next
 
 volumes:
   postgres_data:
