@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./apps/api/app:/code/app
+      - ./apps/api/app:/app
 
   web:
     build:
