@@ -1,4 +1,5 @@
 A FastAPI, Next.js and PostgreSQL template
+
 ```
 - Python: 3.12
 - FastAPI: 0.115.6
@@ -8,21 +9,28 @@ A FastAPI, Next.js and PostgreSQL template
 
 # Getting started
 
-- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/). It has both Docker and Docker Compose
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/). It has both Docker and Docker Compose.
 - Clone the repo - `$ git clone git@github.com:nynvr/fastapi-nextjs-postgresql-template.git`
 - Go to repo root - `$ cd fastapi-nextjs-postgresql-template`
 - Run Docker Compose
   - `$ docker compose -f docker-compose.development.yml up --build`
   - This will run 3 services,
-    - api service - FastAPI app - `http://0.0.0.0:8000/`
-    - web service - Next.js app - `http://0.0.0.0:3000/`
-    - db service - PostgreSQL
+    - api service - FastAPI app
+      - `http://0.0.0.0:8000/`
+    - web service - Next.js app
+      - `http://0.0.0.0:3000/`
+    - db service
+      - PostgreSQL
+
+# Local development
+
+- Use `Draw.io Integration` (VS Code Identifier: hediet.vscode-drawio) to document system design and, generally, create diagrams. The extension allows you to store your diagrams in your repository. Store them under `/docs` folder.
+- Use `Kanbn Extension for Visual Studio Code` (VS Code Identifier: gordonlarrigan.vscode-kanbn) to manage your to do list. The extension allows you to store your to do list in your repository. It is based on Markdown.
+  - You can just delete the `/.kanbn` folder if you don't use the extension.
 
 # Python and Node environment management
 
 - Since we are using Docker, environments are being handled by the containers.
-- Python: 3.12
-- Node: 20.18
 
 # Python and Node package management
 
@@ -36,6 +44,8 @@ A FastAPI, Next.js and PostgreSQL template
 
 - No need to "restart" the services to see code changes
 - Docker Compose is using "volumes"
+
+# FastAPI commands
 
 # Docker commands
 
